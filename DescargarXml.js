@@ -23,7 +23,7 @@ soap.createClient(url, function(err, client) {
       return;
     }
     // console.log ({result});
-    var prueba = result.return.resourceData;
+   // var prueba = result.return.resourceData;
     // console.log (prueba.$value);
 
 
@@ -33,7 +33,8 @@ soap.createClient(url, function(err, client) {
       const xmlData = atob(base64Data);
 
       // Guardar el contenido decodificado en un archivo XML
-      const filePath = path.join(__dirname, 'downloaded_file.xml');
+      const filePath = path.join(__dirname, `${args.folio}_file.xml`);
+    //   const filePath = path.join(__dirname, 'downloaded_file.xml');
       fs.writeFile(filePath, xmlData, { encoding: 'utf8' }, function(err) {
         if (err) {
           console.error('Error guardando archivo XML:', err);
