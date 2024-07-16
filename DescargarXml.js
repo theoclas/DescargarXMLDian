@@ -33,7 +33,7 @@ soap.createClient(url, function(err, client) {
       const xmlData = atob(base64Data);
 
       // Guardar el contenido decodificado en un archivo XML
-      const filePath = path.join(__dirname, `${args.folio}_file.xml`);
+      const filePath = path.join(__dirname, `./Xmls/${args.folio}_file.xml`);
     //   const filePath = path.join(__dirname, 'downloaded_file.xml');
       fs.writeFile(filePath, xmlData, { encoding: 'utf8' }, function(err) {
         if (err) {
